@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sign-up-page',
   templateUrl: './sign-up-page.component.html',
   styleUrls: ['./sign-up-page.component.css']
 })
-export class SignUpPageComponent implements OnInit {
+export class SignUpPageComponent {
+  
+  userName = '';
+  userLogin = '';
+  userPassword = '';
+  userEmail = '';
 
   constructor() { }
-
-  ngOnInit() {
+  
+  register(userName){
+    this.userName = userName;
   }
+
+  setName(event: Event){
+
+    console.log(Event);
+  }
+
 
 }
