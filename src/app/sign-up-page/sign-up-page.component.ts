@@ -24,5 +24,9 @@ export class SignUpPageComponent {
     console.log(Event);
   }
 
+  submitForm(form: HTMLFormElement){
+    console.log("Submited!", form);
+  }
+
 
 }
