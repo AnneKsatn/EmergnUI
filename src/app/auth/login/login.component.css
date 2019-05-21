@@ -96,3 +96,13 @@
     background-color:#52bcd3;
     border-color:#52bcd3
 }
+
+.form-help-text{
+    color:#fb494d;
+    font-size:13px
+}
+
+.form-group.has-success .form-help-text{
+    color:#8cde33;
+    font-size:13px
+}
