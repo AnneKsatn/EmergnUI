@@ -25,4 +25,9 @@ export class UsersService {
     return this.http.post('http://localhost:3000/users', user)
     .map((response: Response) => response.json());
   }
+
+    getAllUsers(){
+      return this.http.get(`http://localhost:3000/users`)
+      .map((response: Response) => response.json())
+    }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { SystemComponent } from './system.component';
 import { SystemRoutingModule } from './system-routing.module';
+import { EditPageComponent } from './edit-page/edit-page.component';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { SystemRoutingModule } from './system-routing.module';
         SystemRoutingModule
     ],
     exports: [CommonModule, SharedModule],
-    declarations: [SystemComponent],
+    declarations: [SystemComponent, EditPageComponent],
 })
 
 export class SystemModule {

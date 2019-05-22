@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Params } from '@angular/router';
+import { User } from '../shared/models/user.model';
+import { UsersService } from '../shared/services/users.service';
 
 @Component({
     selector: 'wfm-system',
@@ -8,24 +11,22 @@ import { Component, OnInit } from "@angular/core";
 
 export class SystemComponent implements OnInit{
 
-    users = [{ login: "Otto", name: "Mark", email: "@mdo", pass: "tt" },
-    { login: "OKs", name: "Jack", email: "@mdo", pass: "tt" },
-    { login: "Lut", name: "Nick", email: "@mdo", pass: "tt" },
-    { login: "OKs", name: "Jack", email: "@mdo", pass: "tt" },
-    { login: "Lut", name: "Nick", email: "@mdo", pass: "tt" },
-    { login: "OKs", name: "Jack", email: "@mdo", pass: "tt" },
-    { login: "Lut", name: "Nick", email: "@mdo", pass: "tt" },
-    { login: "OKs", name: "Jack", email: "@mdo", pass: "tt" },
-    { login: "Lut", name: "Nick", email: "@mdo", pass: "tt" },
-    { login: "OKs", name: "Jack", email: "@mdo", pass: "tt" },
-    { login: "Lut", name: "Nick", email: "@mdo", pass: "tt" },
-    { login: "OKs", name: "Jack", email: "@mdo", pass: "tt" },
-    { login: "Lut", name: "Nick", email: "@mdo", pass: "tt" }];
+    currUser: User
+    users: User[]=[]
   
   
-    constructor() { }
+    constructor(
+        private route: ActivatedRoute,
+        private usersService: UsersService
+    ) { }
   
     ngOnInit() {
+
+        this.route.queryParams.subscribe((params: Params) => {
+            this.currUser = new User(params['email'], params['login'], params['password'], params['name'])
+        })
+
+        console.log(this.usersService.getAllUsers().subscribe(data => this.users=data))
     }
   
 
