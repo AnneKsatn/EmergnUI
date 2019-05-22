@@ -46,12 +46,9 @@ export class LoginComponent implements OnInit {
           this.message.text='';
           window.localStorage.setItem('user', JSON.stringify(user));
           this.authService.login();
-            this.router.navigate(['/system'], {
+            this.router.navigate(['/system/main'], {
               queryParams: {
-                login: user.login,
-                email: user.email,
-                name: user.name,
-                password: user.password
+                login: user.login
               }
             });
         } else {

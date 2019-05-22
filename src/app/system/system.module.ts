@@ -4,6 +4,8 @@ import { SharedModule } from '../shared/shared.module';
 import { SystemComponent } from './system.component';
 import { SystemRoutingModule } from './system-routing.module';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { FilterPipe } from '../shared/pipes/filter.pipe';
 
 
 @NgModule({
@@ -13,7 +15,11 @@ import { EditPageComponent } from './edit-page/edit-page.component';
         SystemRoutingModule
     ],
     exports: [CommonModule, SharedModule],
-    declarations: [SystemComponent, EditPageComponent],
+    declarations: [SystemComponent, 
+        EditPageComponent, 
+        MainPageComponent,
+        FilterPipe
+    ],
 })
 
 export class SystemModule {

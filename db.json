@@ -1,14 +1,13 @@
 {
   "users": [
     {
-      "id": 1,
       "email": "wfm@mail.ru",
-      "password": "123",
-      "name": "Администратор",
-      "login": "Adm"
+      "login": "Admin",
+      "password": "12345",
+      "name": "Luck",
+      "id": 1
     },
     {
-
       "id": 2,
       "email": "wfm2@mail.ru",
       "password": "123",

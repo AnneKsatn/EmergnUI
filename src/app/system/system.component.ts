@@ -11,22 +11,10 @@ import { UsersService } from '../shared/services/users.service';
 
 export class SystemComponent implements OnInit{
 
-    currUser: User
-    users: User[]=[]
-  
-  
-    constructor(
-        private route: ActivatedRoute,
-        private usersService: UsersService
-    ) { }
+ 
   
     ngOnInit() {
 
-        this.route.queryParams.subscribe((params: Params) => {
-            this.currUser = new User(params['email'], params['login'], params['password'], params['name'])
-        })
-
-        console.log(this.usersService.getAllUsers().subscribe(data => this.users=data))
     }
   
 

@@ -1,0 +1,86 @@
+<div class="row align-items-center">
+  <div class="col-3">
+
+      <div class="card">
+          <h5 class="card-header text-center">Ваш профиль</h5>
+          <table class="table">
+              <tbody class="text-center">
+                    <tr>
+                            <td>login</td>
+                            <td>{{currUser.login}}</td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>{{currUser.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td>{{currUser.password}}</td>
+                        </tr>
+      
+                        <tr>
+                            <td>email</td>
+                            <td>{{currUser.email}}</td>
+                        </tr>
+          </table>
+
+          <div class="row ">
+              <div class="mx-auto mb-4">
+                  <button type="button" class="btn btn-primary mr-5" (click)="edit()">Edit</button>
+                  <button type="button" class="btn btn-primary " (click)="exit()" >Exit</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-9 mt-5 pl-5">
+      <div class="row mb-4 mt-5"> 
+          <div class="col-3">
+              <input type="text"
+                     class="form-control" 
+                     placeholder="Enter login" 
+                     [(ngModel)] = "searchLogin"
+                     >
+          </div>
+          <div class="col-3">
+              <input type="text" 
+                     class="form-control" 
+                     placeholder="Enter name"
+                     [(ngModel)] = "searchName" >
+          </div>
+          <div class="col-3">
+              <input type="text" 
+                     class="form-control" 
+                     placeholder="Enter email" 
+                     [(ngModel)] = "searchEmail">
+          </div>
+      </div>
+  
+
+      <div class="table-wrapper card">
+          <table class="table ">
+              <thead>
+                  <tr>
+                      <th class="text-center">Login</th>
+                      <th class="text-center">Name</th>
+                      <th class="text-center">Email</th>
+                      <th class="text-center">Password</th>
+                  </tr>
+              </thead>
+
+              <tbody class="text-center">
+                  <tr *ngFor="let user of users | wfmFilter:searchEmail:searchName:searchLogin">
+                      <td>{{user.login}}</td>
+                      <td>{{user.name}}</td>
+                      <td>{{user.email}}</td>
+                      <td *ngIf="user.login== currUser.login;  else hidden">{{user.password}}</td>
+
+                      <ng-template #hidden>
+                          *******
+                      </ng-template>
+
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>

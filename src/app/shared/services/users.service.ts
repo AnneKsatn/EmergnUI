@@ -6,7 +6,7 @@ import { User } from '../models/user.model';
 
 @Injectable()
 export class UsersService {
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
   getUserByLogin(login: string): Observable<User> {
     return this.http.get(`http://localhost:3000/users?login=${login}`)
@@ -14,7 +14,7 @@ export class UsersService {
       .map((user: User[]) => user[0] ? user[0] : undefined);
   }
 
-  
+
   getUserByEmail(email: string): Observable<User> {
     return this.http.get(`http://localhost:3000/users?email=${email}`)
       .map((response: Response) => response.json())
@@ -23,11 +23,16 @@ export class UsersService {
 
   createNewUser(user: User): Observable<User> {
     return this.http.post('http://localhost:3000/users', user)
-    .map((response: Response) => response.json());
+      .map((response: Response) => response.json());
   }
 
-    getAllUsers(){
-      return this.http.get(`http://localhost:3000/users`)
+  getAllUsers() {
+    return this.http.get(`http://localhost:3000/users`)
       .map((response: Response) => response.json())
-    }
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put(`http://localhost:3000/users/${user.id}`, user)
+      .map((response: Response) => response.json());
+  }
 }

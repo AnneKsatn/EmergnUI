@@ -1,0 +1,30 @@
+
+
+.table-wrapper {
+    display: inline-block;
+    margin: 40px 0;
+    height: 500px;
+    width: 1000px;
+    overflow: auto;
+    background-color: white;
+  }
+
+  .card{
+    background-color: white;
+  }
+
+  .btn{ 
+    background-image:none;
+    border-radius:0;
+    margin-bottom:5px
+}
+
+.btn.btn-primary{
+    color:#fff;
+    background-color:#52bcd3;
+    border-color:#52bcd3
+}
+
+thead {
+    background-color: #f5f5f5;
+}
