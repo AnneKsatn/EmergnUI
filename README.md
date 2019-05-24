@@ -1,22 +1,22 @@
 
-#UI
-Реализован с помощью AngularJS
+# UI
+Р РµР°Р»РёР·РѕРІР°РЅ СЃ РїРѕРјРѕС‰СЊСЋ AngularJS
 "http://localhost:4200/login"
 
 # RestAPI
 
-Реализован с помощью Spring Boot.
+Р РµР°Р»РёР·РѕРІР°РЅ СЃ РїРѕРјРѕС‰СЊСЋ Spring Boot.
 https://github.com/AnneKsatn/EmergnRestAPI
-Слушает запросы от "http://localhost:4200"
-Посмотреть результат запроса к БД можно на "http://localhost:8080/users"
+РЎР»СѓС€Р°РµС‚ Р·Р°РїСЂРѕСЃС‹ РѕС‚ "http://localhost:4200"
+РџРѕСЃРјРѕС‚СЂРµС‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚ Р·Р°РїСЂРѕСЃР° Рє Р‘Р” РјРѕР¶РЅРѕ РЅР° "http://localhost:8080/users"
 
-#БД 
+# Р‘Р” 
 
-PostgreSQL. Необходимо:
+PostgreSQL. РќРµРѕР±С…РѕРґРёРјРѕ:
 
-1. Установить PostgreSQL
-2. Создать бд "emergn" 
-3. Создать таблицу "users"
+1. РЈСЃС‚Р°РЅРѕРІРёС‚СЊ PostgreSQL
+2. РЎРѕР·РґР°С‚СЊ Р±Рґ "emergn" 
+3. РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ "users"
 
 CREATE TABLE users
 (
