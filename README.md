@@ -1,6 +1,6 @@
 
 # UI
-Реализован с помощью AngularJS
+Реализован с помощью AngularJS.
 "http://localhost:4200/login"
 
 # RestAPI
