@@ -26,3 +26,11 @@ CREATE TABLE users
     Password CHARACTER VARYING(30),  
 	Name CHARACTER VARYING(30)  
 );
+
+# Запуск
+
+1. Запускаем БД
+2. Запускаем REST API
+3. Запускаем UI (ng run start)
+4. Переходим на "http://localhost:4200/login" или "http://localhost:4200"
+5. Все внутренние роуты защищены, для просмотра приложения нужно зарегистрироваться.
