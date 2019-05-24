@@ -1,27 +1,28 @@
-# Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+#UI
+Реализован с помощью AngularJS
+"http://localhost:4200/login"
 
-## Development server
+# RestAPI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Реализован с помощью Spring Boot.
+https://github.com/AnneKsatn/EmergnRestAPI
+Слушает запросы от "http://localhost:4200"
+Посмотреть результат запроса к БД можно на "http://localhost:8080/users"
 
-## Code scaffolding
+#БД 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+PostgreSQL. Необходимо:
 
-## Build
+1. Установить PostgreSQL
+2. Создать бд "emergn" 
+3. Создать таблицу "users"
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+CREATE TABLE users
+(
+    Id SERIAL PRIMARY KEY,
+    Email CHARACTER VARYING(30),
+    Login CHARACTER VARYING(30),
+    Password CHARACTER VARYING(30),
+	Name CHARACTER VARYING(30)
+);
