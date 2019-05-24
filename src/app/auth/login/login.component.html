@@ -1,4 +1,3 @@
-<p class="text-xs-center">Войдите для работы</p>
 
 <div 
    class="alert alert-{{message.type}}"
@@ -9,37 +8,37 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form-group" [ngClass]="{'has-error': form.get('login').invalid && form.get('login').touched}">
-    <label for="login">login</label>
+    <label for="login">Login</label>
     <input type="text" class="form-control underlined" id="login" placeholder="Введите ваш login"
       formControlName="login">
   </div>
 
   <span class="form-help-text" *ngIf="form.get('login').invalid && form.get('login').touched">
-    <span *ngIf="form.get('login')['errors']['required']">Введите Логин</span>
+    <span *ngIf="form.get('login')['errors']['required']">Введите login</span>
   </span>
 
 
   <div class="form-group" [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}">
-    <label for="password">Пароль</label>
+    <label for="password">Password</label>
     <input type="password" class="form-control underlined" id="password" placeholder="Пароль"
       formControlName="password">
   </div>
 
   <span class="form-help-text" *ngIf="form.get('password').invalid && form.get('password').touched">
-    <span *ngIf="form.get('password')['errors']['required']">Введите пароль</span>
+    <span *ngIf="form.get('password')['errors']['required']">Введите password</span>
   </span>
 
   <div class="form-group">
     <button type="submit" 
     class="btn btn-block btn-primary"
     [disabled]="form.invalid">
-    Войти
+    Enter
   </button>
 
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">
-      Нет аккаунта? <a [routerLink]="'/registration'">Зарегистрироваться!</a>
+      <a [routerLink]="'/registration'">Register</a>
     </p>
   </div>
 </form>

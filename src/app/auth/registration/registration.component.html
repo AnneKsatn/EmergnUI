@@ -1,4 +1,4 @@
-<p class="text-xs-center">Регистрация для получения доступа</p>
+<p class="text-xs-center">Registration</p>
 
 <div 
    class="alert alert-{{message.type}}"
@@ -14,70 +14,69 @@
     <input type="text" class="form-control underlined" id="email" placeholder="Введите email" formControlName="email">
 
     <span class="form-help-text" *ngIf="form.get('email').invalid && form.get('email').touched">
-      <span *ngIf="form.get('email')['errors']['required']">Введите Email</span>
-      <span *ngIf="form.get('email')['errors']['email']">Email не корректен</span>
-      <span *ngIf="form.get('email')['errors']['emailExist']">Email уже зарегистрирован</span>
+      <span *ngIf="form.get('email')['errors']['required']">Enter email</span>
+      <span *ngIf="form.get('email')['errors']['email']">Email is not correct</span>
+      <span *ngIf="form.get('email')['errors']['emailExist']">Email is already used</span>
     </span>
 
   </div>
 
   <div class="form-group has-error" [ngClass]="{'has-error': form.get('login').invalid && form.get('login').touched}">
-    <label for="login">Логин</label>
+    <label for="login">Login</label>
     <input type="text" class="form-control underlined" id="login" placeholder="Введите логин" formControlName="login">
   
     <span class="form-help-text" *ngIf="form.get('login').invalid && form.get('login').touched">
-      <span *ngIf="form.get('login')['errors']['required']">Введите логин</span>
-      <span *ngIf="form.get('login')['errors']['pattern']">Только буквы и числа</span>
-      <span *ngIf="form.get('login')['errors']['loginExist']">Логин занят</span>
+      <span *ngIf="form.get('login')['errors']['required']">Enter login</span>
+      <span *ngIf="form.get('login')['errors']['pattern']">Only letters and numbers</span>
+      <span *ngIf="form.get('login')['errors']['loginExist']">Login is already used</span>
     </span>
   
   </div>
   
   <div class="form-group has-error" [ngClass]="{'has-error': form.get('name').invalid && form.get('name').touched}">
-    <label for="name">Имя</label>
+    <label for="name">Name</label>
     <input type="text" class="form-control underlined" id="name" placeholder="Введите имя" formControlName="name">
   
     <span class="form-help-text" *ngIf="form.get('name').invalid && form.get('name').touched">
-      <span *ngIf="form.get('name')['errors']['required']">Введите имя</span>
-      <span *ngIf="form.get('name')['errors']['pattern']">Только буквы</span>
+      <span *ngIf="form.get('name')['errors']['required']">Enter name</span>
+      <span *ngIf="form.get('name')['errors']['pattern']">Only letters</span>
     </span>
   
   </div>
   
   <div class="form-group has-error"
     [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}">
-    <label for="password">Пароль</label>
+    <label for="password">Password</label>
     <input type="password" class="form-control underlined" id="password" placeholder="Введите пароль"
       formControlName="password">
   
     <span class="form-help-text" *ngIf="form.get('password').invalid && form.get('password').touched">
-      <span *ngIf="form.get('password')['errors']['required']">Введите пароль</span>
+      <span *ngIf="form.get('password')['errors']['required']">Enter password</span>
     </span>
   
   </div>
   
   <div class="form-group has-error"
     [ngClass]="{'has-error': form.get('repassword').invalid && form.get('repassword').touched}">
-    <label for="repassword">Повторите пароль</label>
+    <label for="repassword">Repeat password</label>
     <input type="password" class="form-control underlined" id="repassword" placeholder="Повторите пароль"
       formControlName="repassword">
   
     <span class="form-help-text" *ngIf="form.get('repassword').invalid && form.get('repassword').touched">
-      <span *ngIf="form.get('repassword')['errors']['required']">Введите пароль</span>
+      <span *ngIf="form.get('repassword')['errors']['required']">Enter password</span>
     </span>
   
   </div>
 
 
   <div class="form-group">
-    <button type="submit" class="btn btn-block btn-primary" [disabled]="form.invalid">Зарегистрироваться</button>
+    <button type="submit" class="btn btn-block btn-primary" [disabled]="form.invalid">OK</button>
   </div>
 
   <div class="form-group">
     <p class="text-muted text-xs-center">
-      Уже есть аккаунт?
       <a [routerLink]="'/login'">
-        Войти!
+        Cancel
       </a>
     </p>
   </div>
