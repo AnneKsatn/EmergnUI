@@ -4,7 +4,7 @@ import { UsersService } from '../../shared/services/users.service';
 import { User } from '../../shared/models/user.model';
 import { Message } from '../../shared/models/message.model';
 import { AuthService } from '../../shared/services/auth.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, Route } from '@angular/router';
 
 
 @Component({
@@ -21,10 +21,17 @@ export class LoginComponent implements OnInit {
     private usersService: UsersService,
     private authService: AuthService,
     private router: Router,
+    private route: ActivatedRoute
       ) { }
 
   ngOnInit() {
     this.message = new Message('danger', '');
+    this.route.queryParams.subscribe((params: Params) => {
+      if(params['accessDenied']) {
+        this.showMessage("Для работы с системой нужно залогиниться")
+      }
+    })
+
     this.form = new FormGroup({
       'login': new FormControl(null, [Validators.required]),
       'password': new FormControl(null, [Validators.required])

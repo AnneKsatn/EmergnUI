@@ -27,6 +27,7 @@
   
     <span class="form-help-text" *ngIf="form.get('login').invalid && form.get('login').touched">
       <span *ngIf="form.get('login')['errors']['required']">Введите логин</span>
+      <span *ngIf="form.get('login')['errors']['pattern']">Только буквы и числа</span>
       <span *ngIf="form.get('login')['errors']['loginExist']">Логин занят</span>
     </span>
   
@@ -38,6 +39,7 @@
   
     <span class="form-help-text" *ngIf="form.get('name').invalid && form.get('name').touched">
       <span *ngIf="form.get('name')['errors']['required']">Введите имя</span>
+      <span *ngIf="form.get('name')['errors']['pattern']">Только буквы</span>
     </span>
   
   </div>

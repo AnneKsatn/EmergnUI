@@ -14,6 +14,8 @@ export class MainPageComponent implements OnInit {
   currUser: User
   users: User[] = []
   searchEmail='';
+  searchName='';
+  searchLogin='';
 
   constructor(
     private route: ActivatedRoute,

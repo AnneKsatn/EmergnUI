@@ -42,8 +42,8 @@ export class EditPageComponent implements OnInit {
     this.form = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email], this.checkEmailExist.bind(this)),
       'password': new FormControl(null, [Validators.required]),
-      'login': new FormControl(null, [Validators.required], this.checkLoginExist.bind(this)),
-      'name': new FormControl(null, [Validators.required]),
+      'login': new FormControl(null, [Validators.required,  Validators.pattern('[a-zA-Z0-9а-яА-Я]*')], this.checkLoginExist.bind(this)),
+      'name': new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Zа-яА-Я]*')]),
       'repassword': new FormControl(null, [Validators.required])
     });
   }
